@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<launch>
+    <!--启动waypoint_loader节点-->
+    <node pkg="waypoint_loader" type="waypoint_loader.py" name="waypoint_loader">
+        <!--放入参数服务器中，从参数服务器中获取路径位置-->
+        <param name="path" value="$(find waypoint_loader)/waypoints/waypoints.csv" />
+        <!--额定速度设置-->
+        <param name="velocity" value="10" />
+    </node>
+</launch>

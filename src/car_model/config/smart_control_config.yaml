@@ -1,0 +1,41 @@
+smart:
+# controls the rear two tires based on individual motors
+  # Publish all joint states -----------------------------------
+  # 节点状态发布器
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50  
+  # 速度控制器
+  # 基于速度控制的节点速度控制器，速度控制，本身需要在urdf文件里面定义好
+  rear_right_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: rear_right_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  rear_left_velocity_controller:
+    type: velocity_controllers/JointVelocityController
+    joint: rear_left_wheel_joint
+    pid: {p: 100.0, i: 0.01, d: 10.0}
+  # 位置控制器
+  # 基于力据控制的位置控制器，力距控制，本身需要在urdf文件里面定义好
+  front_right_steering_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: front_right_steering_joint
+    pid: {p: 40000.0, i: 200.0, d: 1.0}    
+  front_left_steering_position_controller:
+    type: effort_controllers/JointPositionController
+    joint: front_left_steering_joint
+    pid: {p: 40000.0, i: 200.0, d: 1.0}
+
+  gazebo_ros_control: 
+    pid_gains:
+      rear_right_wheel_joint:
+        p: 100.0
+        i: 0.01
+        d: 10.0
+
+      rear_left_wheel_joint:
+        p: 100.0
+        i: 0.01
+        d: 10.0
+
+    
