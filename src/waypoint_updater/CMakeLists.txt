@@ -200,3 +200,12 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+find_package(PCL REQUIRED)
+
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+
+add_executable(ekf_waypoint_updater src/ekf_waypoint_updater.cpp)
+target_link_libraries(ekf_waypoint_updater ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+add_dependencies(ekf_waypoint_updater  styx_msgs_gencpp)

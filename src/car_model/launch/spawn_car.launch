@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
-
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
 	<include file="$(find car_model)/launch/spawn_xacro.launch">
 
 		<arg name="x" value="0.0"/>

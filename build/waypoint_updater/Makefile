@@ -80,6 +80,28 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
+
 # Special rule for the target install
 install: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
@@ -113,28 +135,6 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
 # The main all target
 all: cmake_check_build_system
 	cd /home/lees/catkin_ws/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/lees/catkin_ws/build/CMakeFiles /home/lees/catkin_ws/build/waypoint_updater/CMakeFiles/progress.marks
@@ -167,6 +167,48 @@ depend:
 	cd /home/lees/catkin_ws/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/rule:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/rule
+.PHONY : waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/rule
+
+# Convenience name for target.
+ekf_waypoint_updater: waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/rule
+
+.PHONY : ekf_waypoint_updater
+
+# fast build rule for target.
+ekf_waypoint_updater/fast:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/build.make waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/build
+.PHONY : ekf_waypoint_updater/fast
+
+src/ekf_waypoint_updater.o: src/ekf_waypoint_updater.cpp.o
+
+.PHONY : src/ekf_waypoint_updater.o
+
+# target to build an object file
+src/ekf_waypoint_updater.cpp.o:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/build.make waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/src/ekf_waypoint_updater.cpp.o
+.PHONY : src/ekf_waypoint_updater.cpp.o
+
+src/ekf_waypoint_updater.i: src/ekf_waypoint_updater.cpp.i
+
+.PHONY : src/ekf_waypoint_updater.i
+
+# target to preprocess a source file
+src/ekf_waypoint_updater.cpp.i:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/build.make waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/src/ekf_waypoint_updater.cpp.i
+.PHONY : src/ekf_waypoint_updater.cpp.i
+
+src/ekf_waypoint_updater.s: src/ekf_waypoint_updater.cpp.s
+
+.PHONY : src/ekf_waypoint_updater.s
+
+# target to generate assembly for a file
+src/ekf_waypoint_updater.cpp.s:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/build.make waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/src/ekf_waypoint_updater.cpp.s
+.PHONY : src/ekf_waypoint_updater.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -175,11 +217,15 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
+	@echo "... edit_cache"
+	@echo "... test"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
-	@echo "... test"
+	@echo "... ekf_waypoint_updater"
+	@echo "... src/ekf_waypoint_updater.o"
+	@echo "... src/ekf_waypoint_updater.i"
+	@echo "... src/ekf_waypoint_updater.s"
 .PHONY : help
 
 

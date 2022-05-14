@@ -167,6 +167,48 @@ depend:
 	cd /home/lees/catkin_ws/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/rule:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/rule
+.PHONY : waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/rule
+
+# Convenience name for target.
+ekf_waypoint_loader: waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/rule
+
+.PHONY : ekf_waypoint_loader
+
+# fast build rule for target.
+ekf_waypoint_loader/fast:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/build.make waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/build
+.PHONY : ekf_waypoint_loader/fast
+
+src/ekf_waypoint_loader.o: src/ekf_waypoint_loader.cpp.o
+
+.PHONY : src/ekf_waypoint_loader.o
+
+# target to build an object file
+src/ekf_waypoint_loader.cpp.o:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/build.make waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/src/ekf_waypoint_loader.cpp.o
+.PHONY : src/ekf_waypoint_loader.cpp.o
+
+src/ekf_waypoint_loader.i: src/ekf_waypoint_loader.cpp.i
+
+.PHONY : src/ekf_waypoint_loader.i
+
+# target to preprocess a source file
+src/ekf_waypoint_loader.cpp.i:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/build.make waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/src/ekf_waypoint_loader.cpp.i
+.PHONY : src/ekf_waypoint_loader.cpp.i
+
+src/ekf_waypoint_loader.s: src/ekf_waypoint_loader.cpp.s
+
+.PHONY : src/ekf_waypoint_loader.s
+
+# target to generate assembly for a file
+src/ekf_waypoint_loader.cpp.s:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/build.make waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/src/ekf_waypoint_loader.cpp.s
+.PHONY : src/ekf_waypoint_loader.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -180,6 +222,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... ekf_waypoint_loader"
+	@echo "... src/ekf_waypoint_loader.o"
+	@echo "... src/ekf_waypoint_loader.i"
+	@echo "... src/ekf_waypoint_loader.s"
 .PHONY : help
 
 

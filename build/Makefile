@@ -817,6 +817,32 @@ _styx_msgs_generate_messages_check_deps_Waypoint/fast:
 	$(MAKE) -f styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/build.make styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/build
 .PHONY : _styx_msgs_generate_messages_check_deps_Waypoint/fast
 
+#=============================================================================
+# Target rules for targets named ekf_waypoint_loader
+
+# Build rule for target.
+ekf_waypoint_loader: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ekf_waypoint_loader
+.PHONY : ekf_waypoint_loader
+
+# fast build rule for target.
+ekf_waypoint_loader/fast:
+	$(MAKE) -f waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/build.make waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/build
+.PHONY : ekf_waypoint_loader/fast
+
+#=============================================================================
+# Target rules for targets named ekf_waypoint_updater
+
+# Build rule for target.
+ekf_waypoint_updater: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 ekf_waypoint_updater
+.PHONY : ekf_waypoint_updater
+
+# fast build rule for target.
+ekf_waypoint_updater/fast:
+	$(MAKE) -f waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/build.make waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/build
+.PHONY : ekf_waypoint_updater/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -880,6 +906,8 @@ help:
 	@echo "... rosgraph_msgs_generate_messages_nodejs"
 	@echo "... styx_msgs_generate_messages"
 	@echo "... _styx_msgs_generate_messages_check_deps_Waypoint"
+	@echo "... ekf_waypoint_loader"
+	@echo "... ekf_waypoint_updater"
 .PHONY : help
 
 

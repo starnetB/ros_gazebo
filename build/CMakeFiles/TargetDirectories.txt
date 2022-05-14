@@ -97,10 +97,12 @@
 /home/lees/catkin_ws/build/waypoint_loader/CMakeFiles/rebuild_cache.dir
 /home/lees/catkin_ws/build/waypoint_loader/CMakeFiles/edit_cache.dir
 /home/lees/catkin_ws/build/waypoint_loader/CMakeFiles/test.dir
+/home/lees/catkin_ws/build/waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir
 /home/lees/catkin_ws/build/waypoint_updater/CMakeFiles/install/strip.dir
 /home/lees/catkin_ws/build/waypoint_updater/CMakeFiles/install/local.dir
+/home/lees/catkin_ws/build/waypoint_updater/CMakeFiles/edit_cache.dir
+/home/lees/catkin_ws/build/waypoint_updater/CMakeFiles/test.dir
 /home/lees/catkin_ws/build/waypoint_updater/CMakeFiles/install.dir
 /home/lees/catkin_ws/build/waypoint_updater/CMakeFiles/list_install_components.dir
 /home/lees/catkin_ws/build/waypoint_updater/CMakeFiles/rebuild_cache.dir
-/home/lees/catkin_ws/build/waypoint_updater/CMakeFiles/edit_cache.dir
-/home/lees/catkin_ws/build/waypoint_updater/CMakeFiles/test.dir
+/home/lees/catkin_ws/build/waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir

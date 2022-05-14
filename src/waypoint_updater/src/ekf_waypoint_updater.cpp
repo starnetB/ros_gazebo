@@ -62,6 +62,7 @@ bool EKF_WayPointUpdater::get_laneflag()
 
 void EKF_WayPointUpdater::ekf_pose_cb(const geometry_msgs::PoseStamped::ConstPtr& pose)
 {
+   
     this->pose.header.frame_id=pose->header.frame_id;
     this->pose.pose.orientation.w=pose->pose.orientation.w;
     this->pose.pose.orientation.x=pose->pose.orientation.x;
@@ -70,10 +71,16 @@ void EKF_WayPointUpdater::ekf_pose_cb(const geometry_msgs::PoseStamped::ConstPtr
     this->pose.pose.position.x=pose->pose.position.x;
     this->pose.pose.position.y=pose->pose.position.y;
     this->pose.pose.position.z=pose->pose.position.z;
+    this->poseflag=true;
 }
 
 void EKF_WayPointUpdater::ekf_waypoints_cb(const styx_msgs::Lane::ConstPtr& ekf_lane)
 {
+    if(!laneflag){
+        this->lane.header=ekf_lane->header;
+        this->lane.waypoints=ekf_lane->waypoints;
+        this->laneflag=true;
+    }
     if(!this->kdtreeflag){
         pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
 
@@ -91,6 +98,7 @@ void EKF_WayPointUpdater::ekf_waypoints_cb(const styx_msgs::Lane::ConstPtr& ekf_
         }
 
         kdtree.setInputCloud(cloud);
+        kdtreeflag=true;
     }
 }
 
@@ -149,7 +157,7 @@ int main(int argc,char **argv)
     EKF_WayPointUpdater ekf_waypointupdater;
 
     ros::Subscriber rear_pose=nh.subscribe("/smart/rear_pose",1,&EKF_WayPointUpdater::ekf_pose_cb,&ekf_waypointupdater);
-    ros::Subscriber waypoints=nh.subscribe("/base_waypoints",1,&EKF_WayPointUpdater::ekf_waypoints_cb,&ekf_waypointupdater);
+    ros::Subscriber waypoints=nh.subscribe("/ekf_base_waypoints",1,&EKF_WayPointUpdater::ekf_waypoints_cb,&ekf_waypointupdater);
 
     ros::Publisher final_waypoints_pub=nh.advertise<styx_msgs::Lane>("ekf_final_waypoints",1);
     ros::Publisher final_path_pub=nh.advertise<nav_msgs::Path>("ekf_final_path",1);

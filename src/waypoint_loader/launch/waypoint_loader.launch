@@ -7,4 +7,7 @@
         <!--额定速度设置-->
         <param name="velocity" value="10" />
     </node>
+    <node pkg="waypoint_loader" type="ekf_waypoint_loader" name="ekf_waypoint_loader" output="screen">
+        <param name="ekf_path" value="$(find waypoint_loader)/waypoints/obj_pose-laser-radar-synthetic-output.txt" />
+    </node>
 </launch>

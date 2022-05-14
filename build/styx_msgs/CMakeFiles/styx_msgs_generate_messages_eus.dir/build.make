@@ -62,55 +62,55 @@ styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus: /home/lees/catkin_ws/devel
 
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLight.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLight.l: /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLight.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLight.l: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLight.l: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLight.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLight.l: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLight.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLight.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLight.l: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating EusLisp code from styx_msgs/TrafficLight.msg"
-	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /home/lees/anaconda3/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg
+	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg
 
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLightArray.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLightArray.l: /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLightArray.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLightArray.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLightArray.l: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLightArray.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLightArray.l: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLightArray.l: /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLightArray.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLightArray.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLightArray.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLightArray.l: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating EusLisp code from styx_msgs/TrafficLightArray.msg"
-	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /home/lees/anaconda3/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLightArray.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg
+	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLightArray.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg
 
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/share/geometry_msgs/msg/TwistStamped.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Waypoint.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating EusLisp code from styx_msgs/Waypoint.msg"
-	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /home/lees/anaconda3/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg
+	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg
 
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /home/lees/catkin_ws/src/styx_msgs/msg/Lane.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/share/geometry_msgs/msg/TwistStamped.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/Lane.l: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating EusLisp code from styx_msgs/Lane.msg"
-	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /home/lees/anaconda3/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lees/catkin_ws/src/styx_msgs/msg/Lane.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg
+	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py /home/lees/catkin_ws/src/styx_msgs/msg/Lane.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg
 
 /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/manifest.l: /opt/ros/noetic/lib/geneus/gen_eus.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating EusLisp manifest code for styx_msgs"
-	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /home/lees/anaconda3/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs styx_msgs geometry_msgs sensor_msgs std_msgs
+	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/geneus/cmake/../../../lib/geneus/gen_eus.py -m -o /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs styx_msgs geometry_msgs sensor_msgs std_msgs
 
 styx_msgs_generate_messages_eus: styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus
 styx_msgs_generate_messages_eus: /home/lees/catkin_ws/devel/share/roseus/ros/styx_msgs/msg/TrafficLight.l

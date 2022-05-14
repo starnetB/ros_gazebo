@@ -220,7 +220,7 @@ styx_msgs/clean: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Wa
 # Directory level rules for directory waypoint_loader
 
 # Recursive "all" directory target.
-waypoint_loader/all:
+waypoint_loader/all: waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/all
 
 .PHONY : waypoint_loader/all
 
@@ -230,7 +230,7 @@ waypoint_loader/preinstall:
 .PHONY : waypoint_loader/preinstall
 
 # Recursive "clean" directory target.
-waypoint_loader/clean:
+waypoint_loader/clean: waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/clean
 
 .PHONY : waypoint_loader/clean
 
@@ -238,7 +238,7 @@ waypoint_loader/clean:
 # Directory level rules for directory waypoint_updater
 
 # Recursive "all" directory target.
-waypoint_updater/all:
+waypoint_updater/all: waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/all
 
 .PHONY : waypoint_updater/all
 
@@ -248,7 +248,7 @@ waypoint_updater/preinstall:
 .PHONY : waypoint_updater/preinstall
 
 # Recursive "clean" directory target.
-waypoint_updater/clean:
+waypoint_updater/clean: waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/clean
 
 .PHONY : waypoint_updater/clean
 
@@ -395,7 +395,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googlemock/CMakeFiles/gmoc
 gtest/googlemock/CMakeFiles/gmock_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock_main.dir/build.make gtest/googlemock/CMakeFiles/gmock_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=3,4 "Built target gmock_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=7,8 "Built target gmock_main"
 .PHONY : gtest/googlemock/CMakeFiles/gmock_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -422,7 +422,7 @@ gtest/googlemock/CMakeFiles/gmock_main.dir/clean:
 gtest/googlemock/CMakeFiles/gmock.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/depend
 	$(MAKE) -f gtest/googlemock/CMakeFiles/gmock.dir/build.make gtest/googlemock/CMakeFiles/gmock.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=1,2 "Built target gmock"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=5,6 "Built target gmock"
 .PHONY : gtest/googlemock/CMakeFiles/gmock.dir/all
 
 # Build rule for subdir invocation for target.
@@ -449,7 +449,7 @@ gtest/googlemock/CMakeFiles/gmock.dir/clean:
 gtest/googletest/CMakeFiles/gtest_main.dir/all: gtest/googletest/CMakeFiles/gtest.dir/all
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest_main.dir/build.make gtest/googletest/CMakeFiles/gtest_main.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=7,8 "Built target gtest_main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=11,12 "Built target gtest_main"
 .PHONY : gtest/googletest/CMakeFiles/gtest_main.dir/all
 
 # Build rule for subdir invocation for target.
@@ -476,7 +476,7 @@ gtest/googletest/CMakeFiles/gtest_main.dir/clean:
 gtest/googletest/CMakeFiles/gtest.dir/all:
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/depend
 	$(MAKE) -f gtest/googletest/CMakeFiles/gtest.dir/build.make gtest/googletest/CMakeFiles/gtest.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=5,6 "Built target gtest"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=9,10 "Built target gtest"
 .PHONY : gtest/googletest/CMakeFiles/gtest.dir/all
 
 # Build rule for subdir invocation for target.
@@ -590,7 +590,7 @@ styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/all: styx_msgs/CMake
 styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/all: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/all
 	$(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/depend
 	$(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=22,23,24,25 "Built target styx_msgs_generate_messages_nodejs"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=26,27,28,29 "Built target styx_msgs_generate_messages_nodejs"
 .PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/all
 
 # Build rule for subdir invocation for target.
@@ -623,7 +623,7 @@ styx_msgs/CMakeFiles/styx_msgs_generate_messages_lisp.dir/all: styx_msgs/CMakeFi
 styx_msgs/CMakeFiles/styx_msgs_generate_messages_lisp.dir/all: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/all
 	$(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_lisp.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_lisp.dir/depend
 	$(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_lisp.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_lisp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=18,19,20,21 "Built target styx_msgs_generate_messages_lisp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=22,23,24,25 "Built target styx_msgs_generate_messages_lisp"
 .PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_lisp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -683,7 +683,7 @@ styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/all: styx_msgs/CMakeFil
 styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/all: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/all
 	$(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/depend
 	$(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=9,10,11,12 "Built target styx_msgs_generate_messages_cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=13,14,15,16 "Built target styx_msgs_generate_messages_cpp"
 .PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1040,7 +1040,7 @@ styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/all: styx_msgs/CMakeFil
 styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/all: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/all
 	$(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/depend
 	$(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=13,14,15,16,17 "Built target styx_msgs_generate_messages_eus"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=17,18,19,20,21 "Built target styx_msgs_generate_messages_eus"
 .PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1289,7 +1289,7 @@ styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/all: styx_msgs/CMakeFile
 styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/all: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/all
 	$(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/depend
 	$(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=26,27,28,29,30 "Built target styx_msgs_generate_messages_py"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=30,31,32,33,34 "Built target styx_msgs_generate_messages_py"
 .PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/all
 
 # Build rule for subdir invocation for target.
@@ -1636,6 +1636,60 @@ _styx_msgs_generate_messages_check_deps_Waypoint: styx_msgs/CMakeFiles/_styx_msg
 styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/clean:
 	$(MAKE) -f styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/build.make styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/clean
 .PHONY : styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/clean
+
+#=============================================================================
+# Target rules for target waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir
+
+# All Build rule for target.
+waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/all: styx_msgs/CMakeFiles/styx_msgs_gencpp.dir/all
+	$(MAKE) -f waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/build.make waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/depend
+	$(MAKE) -f waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/build.make waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=1,2 "Built target ekf_waypoint_loader"
+.PHONY : waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/all
+
+# Build rule for subdir invocation for target.
+waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lees/catkin_ws/build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lees/catkin_ws/build/CMakeFiles 0
+.PHONY : waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/rule
+
+# Convenience name for target.
+ekf_waypoint_loader: waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/rule
+
+.PHONY : ekf_waypoint_loader
+
+# clean rule for target.
+waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/clean:
+	$(MAKE) -f waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/build.make waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/clean
+.PHONY : waypoint_loader/CMakeFiles/ekf_waypoint_loader.dir/clean
+
+#=============================================================================
+# Target rules for target waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir
+
+# All Build rule for target.
+waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/all: styx_msgs/CMakeFiles/styx_msgs_gencpp.dir/all
+	$(MAKE) -f waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/build.make waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/depend
+	$(MAKE) -f waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/build.make waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=3,4 "Built target ekf_waypoint_updater"
+.PHONY : waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/all
+
+# Build rule for subdir invocation for target.
+waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lees/catkin_ws/build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/lees/catkin_ws/build/CMakeFiles 0
+.PHONY : waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/rule
+
+# Convenience name for target.
+ekf_waypoint_updater: waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/rule
+
+.PHONY : ekf_waypoint_updater
+
+# clean rule for target.
+waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/clean:
+	$(MAKE) -f waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/build.make waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/clean
+.PHONY : waypoint_updater/CMakeFiles/ekf_waypoint_updater.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
