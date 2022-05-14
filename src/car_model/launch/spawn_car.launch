@@ -18,5 +18,5 @@
   
   <include file="$(find waypoint_loader)/launch/waypoint_loader.launch"/>
   <include file="$(find waypoint_updater)/launch/waypoint_updater.launch"/>
-  <include file="$(find pure_persuit)/launch/pure_persuit.launch"/>
+  <!--<include file="$(find pure_persuit)/launch/pure_persuit.launch"/>-->
 </launch>

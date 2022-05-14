@@ -64,10 +64,11 @@ find_package(catkin REQUIRED)
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs  # Or other packages containing msgs
-# )
+generate_messages(
+  DEPENDENCIES
+   std_msgs  # Or other packages containing msgs
+   styx_msgs
+ )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -112,8 +113,8 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
-# ${catkin_INCLUDE_DIRS}
+ include
+ ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
@@ -200,3 +201,6 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+add_executable(ekf_waypoint_loader src/ekf_waypoint_loader.cpp)
+target_link_libraries(ekf_waypoint_loader ${catkin_LIBRARIES})
+add_dependencies(ekf_waypoint_loader waypoints_generate_messages_cpp)
