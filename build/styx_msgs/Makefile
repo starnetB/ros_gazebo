@@ -56,17 +56,17 @@ CMAKE_BINARY_DIR = /home/lees/catkin_ws/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install/strip
-install/strip: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
 
-# Special rule for the target install/strip
-install/strip/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
-	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
-.PHONY : install/strip/fast
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
 
 # Special rule for the target install
 install: preinstall
@@ -90,17 +90,6 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
-
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
-
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -111,6 +100,17 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
+
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
 
 # Special rule for the target test
 test:
@@ -123,17 +123,17 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
 
-# Special rule for the target install/local
-install/local/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local/fast
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -183,6 +183,21 @@ styx_msgs_genpy/fast:
 .PHONY : styx_msgs_genpy/fast
 
 # Convenience name for target.
+styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/rule:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/rule
+.PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+styx_msgs_generate_messages_py: styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/rule
+
+.PHONY : styx_msgs_generate_messages_py
+
+# fast build rule for target.
+styx_msgs_generate_messages_py/fast:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/build
+.PHONY : styx_msgs_generate_messages_py/fast
+
+# Convenience name for target.
 styx_msgs/CMakeFiles/styx_msgs_gennodejs.dir/rule:
 	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/styx_msgs_gennodejs.dir/rule
 .PHONY : styx_msgs/CMakeFiles/styx_msgs_gennodejs.dir/rule
@@ -196,21 +211,6 @@ styx_msgs_gennodejs: styx_msgs/CMakeFiles/styx_msgs_gennodejs.dir/rule
 styx_msgs_gennodejs/fast:
 	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_gennodejs.dir/build.make styx_msgs/CMakeFiles/styx_msgs_gennodejs.dir/build
 .PHONY : styx_msgs_gennodejs/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/rule
-.PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-styx_msgs_generate_messages_nodejs: styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : styx_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-styx_msgs_generate_messages_nodejs/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/build
-.PHONY : styx_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
 styx_msgs/CMakeFiles/styx_msgs_generate_messages_lisp.dir/rule:
@@ -228,6 +228,21 @@ styx_msgs_generate_messages_lisp/fast:
 .PHONY : styx_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
+styx_msgs/CMakeFiles/styx_msgs_genlisp.dir/rule:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/styx_msgs_genlisp.dir/rule
+.PHONY : styx_msgs/CMakeFiles/styx_msgs_genlisp.dir/rule
+
+# Convenience name for target.
+styx_msgs_genlisp: styx_msgs/CMakeFiles/styx_msgs_genlisp.dir/rule
+
+.PHONY : styx_msgs_genlisp
+
+# fast build rule for target.
+styx_msgs_genlisp/fast:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_genlisp.dir/build.make styx_msgs/CMakeFiles/styx_msgs_genlisp.dir/build
+.PHONY : styx_msgs_genlisp/fast
+
+# Convenience name for target.
 styx_msgs/CMakeFiles/styx_msgs_geneus.dir/rule:
 	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/styx_msgs_geneus.dir/rule
 .PHONY : styx_msgs/CMakeFiles/styx_msgs_geneus.dir/rule
@@ -241,36 +256,6 @@ styx_msgs_geneus: styx_msgs/CMakeFiles/styx_msgs_geneus.dir/rule
 styx_msgs_geneus/fast:
 	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_geneus.dir/build.make styx_msgs/CMakeFiles/styx_msgs_geneus.dir/build
 .PHONY : styx_msgs_geneus/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/rule
-.PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-styx_msgs_generate_messages_cpp: styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : styx_msgs_generate_messages_cpp
-
-# fast build rule for target.
-styx_msgs_generate_messages_cpp/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/build
-.PHONY : styx_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-.PHONY : styx_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_py: styx_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/rule
-
-.PHONY : std_msgs_generate_messages_py
-
-# fast build rule for target.
-std_msgs_generate_messages_py/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/build.make styx_msgs/CMakeFiles/std_msgs_generate_messages_py.dir/build
-.PHONY : std_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 styx_msgs/CMakeFiles/sensor_msgs_generate_messages_cpp.dir/rule:
@@ -288,199 +273,34 @@ sensor_msgs_generate_messages_cpp/fast:
 .PHONY : sensor_msgs_generate_messages_cpp/fast
 
 # Convenience name for target.
-styx_msgs/CMakeFiles/roscpp_generate_messages_eus.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/roscpp_generate_messages_eus.dir/rule
-.PHONY : styx_msgs/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/rule
+.PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/rule
 
 # Convenience name for target.
-roscpp_generate_messages_eus: styx_msgs/CMakeFiles/roscpp_generate_messages_eus.dir/rule
+styx_msgs_generate_messages_nodejs: styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/rule
 
-.PHONY : roscpp_generate_messages_eus
+.PHONY : styx_msgs_generate_messages_nodejs
 
 # fast build rule for target.
-roscpp_generate_messages_eus/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/roscpp_generate_messages_eus.dir/build.make styx_msgs/CMakeFiles/roscpp_generate_messages_eus.dir/build
-.PHONY : roscpp_generate_messages_eus/fast
+styx_msgs_generate_messages_nodejs/fast:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_nodejs.dir/build
+.PHONY : styx_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
-styx_msgs/CMakeFiles/styx_msgs_genlisp.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/styx_msgs_genlisp.dir/rule
-.PHONY : styx_msgs/CMakeFiles/styx_msgs_genlisp.dir/rule
+styx_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
+.PHONY : styx_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-styx_msgs_genlisp: styx_msgs/CMakeFiles/styx_msgs_genlisp.dir/rule
+sensor_msgs_generate_messages_eus: styx_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
 
-.PHONY : styx_msgs_genlisp
+.PHONY : sensor_msgs_generate_messages_eus
 
 # fast build rule for target.
-styx_msgs_genlisp/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_genlisp.dir/build.make styx_msgs/CMakeFiles/styx_msgs_genlisp.dir/build
-.PHONY : styx_msgs_genlisp/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-.PHONY : styx_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_lisp: styx_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : std_msgs_generate_messages_lisp
-
-# fast build rule for target.
-std_msgs_generate_messages_lisp/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build.make styx_msgs/CMakeFiles/std_msgs_generate_messages_lisp.dir/build
-.PHONY : std_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Lane.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Lane.dir/rule
-.PHONY : styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Lane.dir/rule
-
-# Convenience name for target.
-_styx_msgs_generate_messages_check_deps_Lane: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Lane.dir/rule
-
-.PHONY : _styx_msgs_generate_messages_check_deps_Lane
-
-# fast build rule for target.
-_styx_msgs_generate_messages_check_deps_Lane/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Lane.dir/build.make styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Lane.dir/build
-.PHONY : _styx_msgs_generate_messages_check_deps_Lane/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/roscpp_generate_messages_lisp.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-.PHONY : styx_msgs/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_lisp: styx_msgs/CMakeFiles/roscpp_generate_messages_lisp.dir/rule
-
-.PHONY : roscpp_generate_messages_lisp
-
-# fast build rule for target.
-roscpp_generate_messages_lisp/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/roscpp_generate_messages_lisp.dir/build.make styx_msgs/CMakeFiles/roscpp_generate_messages_lisp.dir/build
-.PHONY : roscpp_generate_messages_lisp/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-.PHONY : styx_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_nodejs: styx_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-geometry_msgs_generate_messages_nodejs/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build.make styx_msgs/CMakeFiles/geometry_msgs_generate_messages_nodejs.dir/build
-.PHONY : geometry_msgs_generate_messages_nodejs/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-.PHONY : styx_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_cpp: styx_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_cpp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_cpp/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build.make styx_msgs/CMakeFiles/geometry_msgs_generate_messages_cpp.dir/build
-.PHONY : geometry_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-.PHONY : styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_py: styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_py
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_py/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build.make styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_py.dir/build
-.PHONY : rosgraph_msgs_generate_messages_py/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLight.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLight.dir/rule
-.PHONY : styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLight.dir/rule
-
-# Convenience name for target.
-_styx_msgs_generate_messages_check_deps_TrafficLight: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLight.dir/rule
-
-.PHONY : _styx_msgs_generate_messages_check_deps_TrafficLight
-
-# fast build rule for target.
-_styx_msgs_generate_messages_check_deps_TrafficLight/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLight.dir/build.make styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLight.dir/build
-.PHONY : _styx_msgs_generate_messages_check_deps_TrafficLight/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-.PHONY : styx_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_eus: styx_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/rule
-
-.PHONY : std_msgs_generate_messages_eus
-
-# fast build rule for target.
-std_msgs_generate_messages_eus/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/build.make styx_msgs/CMakeFiles/std_msgs_generate_messages_eus.dir/build
-.PHONY : std_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/rule
-.PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-styx_msgs_generate_messages_eus: styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/rule
-
-.PHONY : styx_msgs_generate_messages_eus
-
-# fast build rule for target.
-styx_msgs_generate_messages_eus/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/build
-.PHONY : styx_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-.PHONY : styx_msgs/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-geometry_msgs_generate_messages_lisp: styx_msgs/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : geometry_msgs_generate_messages_lisp
-
-# fast build rule for target.
-geometry_msgs_generate_messages_lisp/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build.make styx_msgs/CMakeFiles/geometry_msgs_generate_messages_lisp.dir/build
-.PHONY : geometry_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-.PHONY : styx_msgs/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_nodejs: styx_msgs/CMakeFiles/roscpp_generate_messages_nodejs.dir/rule
-
-.PHONY : roscpp_generate_messages_nodejs
-
-# fast build rule for target.
-roscpp_generate_messages_nodejs/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/roscpp_generate_messages_nodejs.dir/build.make styx_msgs/CMakeFiles/roscpp_generate_messages_nodejs.dir/build
-.PHONY : roscpp_generate_messages_nodejs/fast
+sensor_msgs_generate_messages_eus/fast:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make styx_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
+.PHONY : sensor_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
 styx_msgs/CMakeFiles/styx_msgs_gencpp.dir/rule:
@@ -498,36 +318,6 @@ styx_msgs_gencpp/fast:
 .PHONY : styx_msgs_gencpp/fast
 
 # Convenience name for target.
-styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-.PHONY : styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_cpp: styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_cpp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_cpp/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build.make styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_cpp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-.PHONY : styx_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-std_msgs_generate_messages_cpp: styx_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/rule
-
-.PHONY : std_msgs_generate_messages_cpp
-
-# fast build rule for target.
-std_msgs_generate_messages_cpp/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/build.make styx_msgs/CMakeFiles/std_msgs_generate_messages_cpp.dir/build
-.PHONY : std_msgs_generate_messages_cpp/fast
-
-# Convenience name for target.
 styx_msgs/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule:
 	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
 .PHONY : styx_msgs/CMakeFiles/sensor_msgs_generate_messages_py.dir/rule
@@ -543,19 +333,34 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-styx_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
-.PHONY : styx_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/rule:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/rule
+.PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_py: styx_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/rule
+styx_msgs_generate_messages_cpp: styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_py
+.PHONY : styx_msgs_generate_messages_cpp
 
 # fast build rule for target.
-geometry_msgs_generate_messages_py/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/build.make styx_msgs/CMakeFiles/geometry_msgs_generate_messages_py.dir/build
-.PHONY : geometry_msgs_generate_messages_py/fast
+styx_msgs_generate_messages_cpp/fast:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_cpp.dir/build
+.PHONY : styx_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLight.dir/rule:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLight.dir/rule
+.PHONY : styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLight.dir/rule
+
+# Convenience name for target.
+_styx_msgs_generate_messages_check_deps_TrafficLight: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLight.dir/rule
+
+.PHONY : _styx_msgs_generate_messages_check_deps_TrafficLight
+
+# fast build rule for target.
+_styx_msgs_generate_messages_check_deps_TrafficLight/fast:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLight.dir/build.make styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLight.dir/build
+.PHONY : _styx_msgs_generate_messages_check_deps_TrafficLight/fast
 
 # Convenience name for target.
 styx_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
@@ -571,21 +376,6 @@ sensor_msgs_generate_messages_lisp: styx_msgs/CMakeFiles/sensor_msgs_generate_me
 sensor_msgs_generate_messages_lisp/fast:
 	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build.make styx_msgs/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/build
 .PHONY : sensor_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/rule
-.PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/rule
-
-# Convenience name for target.
-styx_msgs_generate_messages_py: styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/rule
-
-.PHONY : styx_msgs_generate_messages_py
-
-# fast build rule for target.
-styx_msgs_generate_messages_py/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_py.dir/build
-.PHONY : styx_msgs_generate_messages_py/fast
 
 # Convenience name for target.
 styx_msgs/CMakeFiles/sensor_msgs_generate_messages_nodejs.dir/rule:
@@ -618,124 +408,34 @@ _styx_msgs_generate_messages_check_deps_TrafficLightArray/fast:
 .PHONY : _styx_msgs_generate_messages_check_deps_TrafficLightArray/fast
 
 # Convenience name for target.
-styx_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
-.PHONY : styx_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/rule:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/rule
+.PHONY : styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/rule
 
 # Convenience name for target.
-std_msgs_generate_messages_nodejs: styx_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/rule
+_styx_msgs_generate_messages_check_deps_Waypoint: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/rule
 
-.PHONY : std_msgs_generate_messages_nodejs
+.PHONY : _styx_msgs_generate_messages_check_deps_Waypoint
 
 # fast build rule for target.
-std_msgs_generate_messages_nodejs/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build.make styx_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
-.PHONY : std_msgs_generate_messages_nodejs/fast
+_styx_msgs_generate_messages_check_deps_Waypoint/fast:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/build.make styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/build
+.PHONY : _styx_msgs_generate_messages_check_deps_Waypoint/fast
 
 # Convenience name for target.
-styx_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
-.PHONY : styx_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Lane.dir/rule:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Lane.dir/rule
+.PHONY : styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Lane.dir/rule
 
 # Convenience name for target.
-geometry_msgs_generate_messages_eus: styx_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/rule
+_styx_msgs_generate_messages_check_deps_Lane: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Lane.dir/rule
 
-.PHONY : geometry_msgs_generate_messages_eus
+.PHONY : _styx_msgs_generate_messages_check_deps_Lane
 
 # fast build rule for target.
-geometry_msgs_generate_messages_eus/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build.make styx_msgs/CMakeFiles/geometry_msgs_generate_messages_eus.dir/build
-.PHONY : geometry_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/roscpp_generate_messages_py.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/roscpp_generate_messages_py.dir/rule
-.PHONY : styx_msgs/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_py: styx_msgs/CMakeFiles/roscpp_generate_messages_py.dir/rule
-
-.PHONY : roscpp_generate_messages_py
-
-# fast build rule for target.
-roscpp_generate_messages_py/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/roscpp_generate_messages_py.dir/build.make styx_msgs/CMakeFiles/roscpp_generate_messages_py.dir/build
-.PHONY : roscpp_generate_messages_py/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/roscpp_generate_messages_cpp.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-.PHONY : styx_msgs/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-roscpp_generate_messages_cpp: styx_msgs/CMakeFiles/roscpp_generate_messages_cpp.dir/rule
-
-.PHONY : roscpp_generate_messages_cpp
-
-# fast build rule for target.
-roscpp_generate_messages_cpp/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/roscpp_generate_messages_cpp.dir/build.make styx_msgs/CMakeFiles/roscpp_generate_messages_cpp.dir/build
-.PHONY : roscpp_generate_messages_cpp/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-.PHONY : styx_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-sensor_msgs_generate_messages_eus: styx_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/rule
-
-.PHONY : sensor_msgs_generate_messages_eus
-
-# fast build rule for target.
-sensor_msgs_generate_messages_eus/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build.make styx_msgs/CMakeFiles/sensor_msgs_generate_messages_eus.dir/build
-.PHONY : sensor_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-.PHONY : styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_eus: styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_eus
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_eus/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build.make styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_eus.dir/build
-.PHONY : rosgraph_msgs_generate_messages_eus/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-.PHONY : styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_lisp: styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_lisp
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_lisp/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build.make styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_lisp.dir/build
-.PHONY : rosgraph_msgs_generate_messages_lisp/fast
-
-# Convenience name for target.
-styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-.PHONY : styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-rosgraph_msgs_generate_messages_nodejs: styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/rule
-
-.PHONY : rosgraph_msgs_generate_messages_nodejs
-
-# fast build rule for target.
-rosgraph_msgs_generate_messages_nodejs/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build.make styx_msgs/CMakeFiles/rosgraph_msgs_generate_messages_nodejs.dir/build
-.PHONY : rosgraph_msgs_generate_messages_nodejs/fast
+_styx_msgs_generate_messages_check_deps_Lane/fast:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Lane.dir/build.make styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Lane.dir/build
+.PHONY : _styx_msgs_generate_messages_check_deps_Lane/fast
 
 # Convenience name for target.
 styx_msgs/CMakeFiles/styx_msgs_generate_messages.dir/rule:
@@ -753,19 +453,19 @@ styx_msgs_generate_messages/fast:
 .PHONY : styx_msgs_generate_messages/fast
 
 # Convenience name for target.
-styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/rule:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/rule
-.PHONY : styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/rule
+styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/rule:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f CMakeFiles/Makefile2 styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/rule
+.PHONY : styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/rule
 
 # Convenience name for target.
-_styx_msgs_generate_messages_check_deps_Waypoint: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/rule
+styx_msgs_generate_messages_eus: styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/rule
 
-.PHONY : _styx_msgs_generate_messages_check_deps_Waypoint
+.PHONY : styx_msgs_generate_messages_eus
 
 # fast build rule for target.
-_styx_msgs_generate_messages_check_deps_Waypoint/fast:
-	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/build.make styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_Waypoint.dir/build
-.PHONY : _styx_msgs_generate_messages_check_deps_Waypoint/fast
+styx_msgs_generate_messages_eus/fast:
+	cd /home/lees/catkin_ws/build && $(MAKE) -f styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/build.make styx_msgs/CMakeFiles/styx_msgs_generate_messages_eus.dir/build
+.PHONY : styx_msgs_generate_messages_eus/fast
 
 # Help Target
 help:
@@ -773,53 +473,33 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install/strip"
+	@echo "... install/local"
 	@echo "... install"
 	@echo "... list_install_components"
-	@echo "... edit_cache"
-	@echo "... styx_msgs_genpy"
-	@echo "... styx_msgs_gennodejs"
-	@echo "... styx_msgs_generate_messages_nodejs"
-	@echo "... styx_msgs_generate_messages_lisp"
-	@echo "... styx_msgs_geneus"
-	@echo "... styx_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... rebuild_cache"
-	@echo "... roscpp_generate_messages_eus"
-	@echo "... styx_msgs_genlisp"
-	@echo "... std_msgs_generate_messages_lisp"
-	@echo "... _styx_msgs_generate_messages_check_deps_Lane"
-	@echo "... roscpp_generate_messages_lisp"
-	@echo "... geometry_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_cpp"
-	@echo "... rosgraph_msgs_generate_messages_py"
-	@echo "... _styx_msgs_generate_messages_check_deps_TrafficLight"
-	@echo "... std_msgs_generate_messages_eus"
-	@echo "... styx_msgs_generate_messages_eus"
-	@echo "... geometry_msgs_generate_messages_lisp"
-	@echo "... roscpp_generate_messages_nodejs"
+	@echo "... edit_cache"
 	@echo "... test"
-	@echo "... styx_msgs_gencpp"
-	@echo "... rosgraph_msgs_generate_messages_cpp"
-	@echo "... std_msgs_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_py"
-	@echo "... geometry_msgs_generate_messages_py"
-	@echo "... sensor_msgs_generate_messages_lisp"
+	@echo "... styx_msgs_genpy"
+	@echo "... install/strip"
 	@echo "... styx_msgs_generate_messages_py"
+	@echo "... styx_msgs_gennodejs"
+	@echo "... styx_msgs_generate_messages_lisp"
+	@echo "... styx_msgs_genlisp"
+	@echo "... styx_msgs_geneus"
+	@echo "... sensor_msgs_generate_messages_cpp"
+	@echo "... styx_msgs_generate_messages_nodejs"
+	@echo "... sensor_msgs_generate_messages_eus"
+	@echo "... styx_msgs_gencpp"
+	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... styx_msgs_generate_messages_cpp"
+	@echo "... _styx_msgs_generate_messages_check_deps_TrafficLight"
+	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... sensor_msgs_generate_messages_nodejs"
 	@echo "... _styx_msgs_generate_messages_check_deps_TrafficLightArray"
-	@echo "... std_msgs_generate_messages_nodejs"
-	@echo "... geometry_msgs_generate_messages_eus"
-	@echo "... roscpp_generate_messages_py"
-	@echo "... roscpp_generate_messages_cpp"
-	@echo "... sensor_msgs_generate_messages_eus"
-	@echo "... install/local"
-	@echo "... rosgraph_msgs_generate_messages_eus"
-	@echo "... rosgraph_msgs_generate_messages_lisp"
-	@echo "... rosgraph_msgs_generate_messages_nodejs"
-	@echo "... styx_msgs_generate_messages"
 	@echo "... _styx_msgs_generate_messages_check_deps_Waypoint"
+	@echo "... _styx_msgs_generate_messages_check_deps_Lane"
+	@echo "... styx_msgs_generate_messages"
+	@echo "... styx_msgs_generate_messages_eus"
 .PHONY : help
 
 

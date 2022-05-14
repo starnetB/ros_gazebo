@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/lees/catkin_ws/build
 include styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLightArray.dir/progress.make
 
 styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLightArray:
-	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py styx_msgs /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLightArray.msg geometry_msgs/Pose:geometry_msgs/Quaternion:styx_msgs/TrafficLight:std_msgs/Header:geometry_msgs/Point:geometry_msgs/PoseStamped
+	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py styx_msgs /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLightArray.msg std_msgs/Header:geometry_msgs/Point:geometry_msgs/PoseStamped:styx_msgs/TrafficLight:geometry_msgs/Pose:geometry_msgs/Quaternion
 
 _styx_msgs_generate_messages_check_deps_TrafficLightArray: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLightArray
 _styx_msgs_generate_messages_check_deps_TrafficLightArray: styx_msgs/CMakeFiles/_styx_msgs_generate_messages_check_deps_TrafficLightArray.dir/build.make

@@ -61,49 +61,49 @@ styx_msgs/CMakeFiles/styx_msgs_generate_messages_lisp: /home/lees/catkin_ws/deve
 
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLight.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLight.lisp: /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLight.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLight.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLight.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLight.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLight.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLight.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLight.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Lisp code from styx_msgs/TrafficLight.msg"
 	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg
 
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp: /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLightArray.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp: /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp: /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/TrafficLightArray.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Lisp code from styx_msgs/TrafficLightArray.msg"
 	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLightArray.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg
 
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/TwistStamped.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/TwistStamped.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Waypoint.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Lisp code from styx_msgs/Waypoint.msg"
 	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg
 
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/lib/genlisp/gen_lisp.py
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /home/lees/catkin_ws/src/styx_msgs/msg/Lane.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/geometry_msgs/msg/TwistStamped.msg
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/geometry_msgs/msg/TwistStamped.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg/Lane.lisp: /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Lisp code from styx_msgs/Lane.msg"
 	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genlisp/cmake/../../../lib/genlisp/gen_lisp.py /home/lees/catkin_ws/src/styx_msgs/msg/Lane.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/share/common-lisp/ros/styx_msgs/msg
 

@@ -6,6 +6,7 @@
 # testing this directory and lists subdirectories to be tested as well.
 subdirs("gtest")
 subdirs("car_model")
+subdirs("pure_persuit")
 subdirs("styx_msgs")
 subdirs("waypoint_loader")
 subdirs("waypoint_updater")
