@@ -13,7 +13,9 @@
 
 class EKF_PurePersuit{
 public:
-    EKF_PurePersuit():poseflag(false),laneflag(false){}
+    EKF_PurePersuit():poseflag(false),laneflag(false){
+        this->horizon=6.0;
+    }
     ~EKF_PurePersuit(){}
 
     void ekf_pose_cb(const geometry_msgs::PoseStamped::ConstPtr& pose);
@@ -33,8 +35,25 @@ private:
     bool laneflag;
 
     double horizon;
+
+    void T_hpi_hpi(double& alhpa);
 };
 
+void EKF_PurePersuit::T_hpi_hpi(double& alpha)
+{
+    double pi=3.1415926;
+    double h_pi=pi/2;
+    if(alpha>h_pi)
+    {
+        alpha=alpha-pi;
+        this->T_hpi_hpi(alpha);
+    }
+    if(alpha<-h_pi)
+    {
+       alpha=alpha+pi;
+        this->T_hpi_hpi(alpha);
+    }
+}
 
 double EKF_PurePersuit::get_horizon()
 {
@@ -48,7 +67,8 @@ void EKF_PurePersuit::set_horizon(double horizon)
 
 geometry_msgs::Twist EKF_PurePersuit::calcuateTwistCommand()
 {
-    double lad=sqrt(pose.pose.position.x*pose.pose.orientation.x+pose.pose.position.y*pose.pose.position.y);
+    //double lad=sqrt(pose.pose.position.x*pose.pose.orientation.x+pose.pose.position.y*pose.pose.position.y);
+    double lad=0.0;
     int targetIndex=this->lane.waypoints.size()-1;
     for(std::size_t i=0;i<lane.waypoints.size()-1;i++)
     {
@@ -57,6 +77,7 @@ geometry_msgs::Twist EKF_PurePersuit::calcuateTwistCommand()
         double next_x=this->lane.waypoints[i+1].pose.pose.position.x;
         double next_y=this->lane.waypoints[i+1].pose.pose.position.y;
         lad=lad+sqrt((next_x-current_x)*(next_x-current_x)+(next_y-current_y)*(next_y-current_y));
+        //std::cout<<lad<<std::endl;
         if(lad>this->horizon)
         {
             targetIndex=i+1;
@@ -67,7 +88,7 @@ geometry_msgs::Twist EKF_PurePersuit::calcuateTwistCommand()
     //找到目标点
     styx_msgs::Waypoint targetWaypoint=this->lane.waypoints[targetIndex];
     double targetSpeed=this->lane.waypoints[targetIndex].twist.twist.linear.x;
-
+    //double targetSpeed=1;
     //目标点
     double targetX=targetWaypoint.pose.pose.position.x;
     double targetY=targetWaypoint.pose.pose.position.y;
@@ -77,26 +98,26 @@ geometry_msgs::Twist EKF_PurePersuit::calcuateTwistCommand()
     double currentY=this->pose.pose.position.y;
 
 
-    Eigen::Quaterniond qua(this->pose.pose.orientation.w,
-                           this->pose.pose.orientation.x,
-                           this->pose.pose.orientation.y,
-                           this->pose.pose.orientation.z);
+    Eigen::Quaterniond qua((double)this->pose.pose.orientation.w,
+                           (double)this->pose.pose.orientation.x,
+                           (double)this->pose.pose.orientation.y,
+                           (double)this->pose.pose.orientation.z);
 
     Eigen::Vector3d eulr=qua.matrix().eulerAngles(2,1,0);
 
     double yaw=eulr[0];
-
+   
     //alpha
     double alpha=atan2(targetY-currentY,targetX-currentX)-yaw;
-
-    double l=sqrt((targetY-currentY)*(targetY-currentY)*(targetX-currentX)*(targetX-currentX));
+ 
+    this->T_hpi_hpi(alpha);
+    double l=sqrt((targetY-currentY)*(targetY-currentY)+(targetX-currentX)*(targetX-currentX));
 
     geometry_msgs::Twist twist;
    
-    if(l>0.5)
-    {
-        double theta=atan(2.0*1.868*sin(alpha)/l);
-        //twist
+    if(l>2.5)
+    {   //std::cout<<"alpha:"<<alpha<<std::endl;
+        double theta=atan(2*1.868*sin(alpha)/l);
         
         twist.linear.x=targetSpeed;
         twist.angular.z=theta;
@@ -143,6 +164,9 @@ int main(int argc,char** argv)
     ros::NodeHandle nh;
 
     EKF_PurePersuit ekf_pure;
+
+    ekf_pure.set_horizon(6.0);
+
     ros::Subscriber ekf_rear_pose_sub=nh.subscribe("/smart/rear_pose",1,&EKF_PurePersuit::ekf_pose_cb,&ekf_pure);
 
     ros::Subscriber ekf_waypoints_sub=nh.subscribe("/ekf_final_waypoints",1,&EKF_PurePersuit::ekf_lane_cb,&ekf_pure);

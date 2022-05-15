@@ -385,7 +385,7 @@
     <!--阻尼系数:表现为移动时的阻动力，有点表现为摩擦，其实完全不一样-->
     <kd>1</kd>
      <!--穿透深度？的最小值，我们仅仅获得穿透深度-minDepth的那部分力，不懂？反正这个值最大，质量或转动惯量的影响就越小-->
-    <minDepth>0.001</minDepth>
+   
     <!--最大速度-->
     <maxVel>100</maxVel>  
   </gazebo>  
@@ -395,7 +395,7 @@
     <mu2>10000000</mu2>
     <kp>10000000</kp>
     <kd>1</kd>       
-    <minDepth>0.001</minDepth>-->
+    
     <!--最大速度-->
     <maxVel>100</maxVel>  
   </gazebo>   
@@ -405,8 +405,8 @@
     <mu2>10000000</mu2>
     <kp>10000000</kp>
     <kd>1</kd>         
-    <minDepth>0.01</minDepth>
     <!--最大速度-->
+    <minDepth>0.01</minDepth>
     <maxVel>100</maxVel>  
   </gazebo> 
 
@@ -415,8 +415,8 @@
     <mu2>10000000</mu2>
     <kp>10000000</kp>
     <kd>1</kd>         
-    <minDepth>0.01</minDepth>
     <!--最大速度-->
+    <minDepth>0.01</minDepth>
     <maxVel>100</maxVel>  
   </gazebo>    
 

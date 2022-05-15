@@ -62,51 +62,51 @@ styx_msgs/CMakeFiles/styx_msgs_generate_messages_py: /home/lees/catkin_ws/devel/
 
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLight.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLight.py: /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLight.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLight.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLight.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLight.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLight.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLight.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLight.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLight.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG styx_msgs/TrafficLight"
-	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg
+	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /home/lees/anaconda3/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg
 
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLightArray.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLightArray.py: /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLightArray.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLightArray.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLightArray.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLightArray.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLightArray.py: /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLightArray.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLightArray.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLightArray.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLightArray.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLightArray.py: /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLight.msg
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLightArray.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python from MSG styx_msgs/TrafficLightArray"
-	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLightArray.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg
+	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /home/lees/anaconda3/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lees/catkin_ws/src/styx_msgs/msg/TrafficLightArray.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg
 
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/geometry_msgs/msg/TwistStamped.msg
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py: /opt/ros/noetic/share/geometry_msgs/msg/TwistStamped.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python from MSG styx_msgs/Waypoint"
-	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg
+	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /home/lees/anaconda3/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg
 
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /home/lees/catkin_ws/src/styx_msgs/msg/Lane.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/TwistStamped.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
-/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /home/lees/catkin_ws/src/styx_msgs/msg/Waypoint.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/Twist.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/Pose.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/PoseStamped.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/Point.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/Vector3.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/Quaternion.msg
+/home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py: /opt/ros/noetic/share/geometry_msgs/msg/TwistStamped.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python from MSG styx_msgs/Lane"
-	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lees/catkin_ws/src/styx_msgs/msg/Lane.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg
+	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /home/lees/anaconda3/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/lees/catkin_ws/src/styx_msgs/msg/Lane.msg -Istyx_msgs:/home/lees/catkin_ws/src/styx_msgs/msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -p styx_msgs -o /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg
 
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/__init__.py: /opt/ros/noetic/lib/genpy/genmsg_py.py
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/__init__.py: /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLight.py
@@ -114,7 +114,7 @@ styx_msgs/CMakeFiles/styx_msgs_generate_messages_py: /home/lees/catkin_ws/devel/
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/__init__.py: /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Waypoint.py
 /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/__init__.py: /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_Lane.py
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/lees/catkin_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Python msg __init__.py for styx_msgs"
-	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg --initpy
+	cd /home/lees/catkin_ws/build/styx_msgs && ../catkin_generated/env_cached.sh /home/lees/anaconda3/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg --initpy
 
 styx_msgs_generate_messages_py: styx_msgs/CMakeFiles/styx_msgs_generate_messages_py
 styx_msgs_generate_messages_py: /home/lees/catkin_ws/devel/lib/python3/dist-packages/styx_msgs/msg/_TrafficLight.py

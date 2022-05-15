@@ -25,7 +25,8 @@ class PurePersuit:
 		# 读取小车的速度，但这个没啥用
 		rospy.Subscriber('/smart/velocity', TwistStamped, self.vel_cb, queue_size = 1)
 		# 读取局部路径点
-		rospy.Subscriber('/final_waypoints', Lane, self.lane_cb, queue_size = 1)
+		#rospy.Subscriber('/final_waypoints', Lane, self.lane_cb, queue_size = 1)
+		rospy.Subscriber('/ekf_final_waypoints', Lane, self.lane_cb, queue_size = 1)
 
 		# 命令发送器
 		self.twist_pub = rospy.Publisher('/smart/cmd_vel', Twist, queue_size = 1)

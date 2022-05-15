@@ -127,9 +127,12 @@ void EKF_WayPointUpdater::publish_waypoint(ros::Publisher& final_waypoints_pub,r
 {   
     styx_msgs::Lane lane;
     lane.header=this->lane.header;
-    for(std::size_t i=0;i<30;i++)
+    for(std::size_t i=0;i<20;i++)
     {
-        lane.waypoints.push_back(this->lane.waypoints[idx+i]);
+        int index=idx+i;
+        
+        if(index<this->lane.waypoints.size()-1)
+            lane.waypoints.push_back(this->lane.waypoints[idx+i]);
     }
 
     nav_msgs::Path path;
@@ -170,6 +173,7 @@ int main(int argc,char **argv)
         if(ekf_waypointupdater.get_laneflag() &&ekf_waypointupdater.get_kdtreeflag() && ekf_waypointupdater.get_poseflag())
         {
             int idx=ekf_waypointupdater.get_closest_waypoint_idx();
+            std::cout<<idx<<std::endl;
             ekf_waypointupdater.publish_waypoint(final_waypoints_pub,final_path_pub,idx);
         }
         ros::spinOnce();

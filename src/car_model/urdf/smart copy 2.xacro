@@ -1,0 +1,449 @@
+<?xml version="1.0" ?>
+
+<robot name="$(arg roboname)" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <xacro:property name="PI" value="3.1415926835897931"/>
+  <!--xacro提供了大量的宏名，在修改方面可以方便很多-->
+  <!-- base -->
+  <xacro:property name="base_length" value="2.695"/>
+  <xacro:property name="base_width" value="0.68"/>
+  <xacro:property name="base_height" value="1.370"/>
+  <xacro:property name="base_collision_height" value="0.875"/>
+  <xacro:property name="base_mass" value="956"/>
+  <xacro:property name="base_mass_ixx" value="343"/>
+  <xacro:property name="base_mass_iyy" value="728"/>
+  <xacro:property name="base_mass_izz" value="772"/>
+
+  <!-- rear tyre -->
+  <xacro:property name="rear_tyre_x" value="0.945"/>
+  <xacro:property name="rear_tyre_y" value="0.642"/>
+  <xacro:property name="rear_tyre_r" value="0.3"/>
+  <xacro:property name="rear_tyre_length" value="0.165"/>
+  <xacro:property name="rear_tyre_mass" value="20"/>
+  <xacro:property name="rear_tyre_mass_ixx" value="0.5"/>
+  <xacro:property name="rear_tyre_mass_iyy" value="0.9"/>
+  <xacro:property name="rear_tyre_mass_izz" value="0.5"/> 
+
+  <!-- front tyre -->
+  <xacro:property name="front_tyre_x" value="0.923"/>
+  <xacro:property name="front_tyre_y" value="0.642"/>
+  <xacro:property name="front_tyre_r" value="0.3"/>
+  <xacro:property name="front_tyre_length" value="0.165"/>
+  <xacro:property name="front_tyre_mass" value="20"/>
+  <xacro:property name="front_tyre_mass_ixx" value="0.5"/>
+  <xacro:property name="front_tyre_mass_iyy" value="0.9"/>
+  <xacro:property name="front_tyre_mass_izz" value="0.5"/>  
+
+  <!-- steering -->
+  <xacro:property name="str_angle" value="0.6"/>    
+  <xacro:property name="str_length" value="0.01"/>
+  <xacro:property name="str_radius" value="0.1"/>
+  <xacro:property name="str_mass" value="5"/>
+  <xacro:property name="str_mass_ixx" value="0.012"/>
+  <xacro:property name="str_mass_iyy" value="0.025"/>
+  <xacro:property name="str_mass_izz" value="0.012"/> 
+
+  <!--Car Body-->
+  <!--第一部分的链接-->
+  <link name="base_link">
+    <!--碰撞部分-->
+    <collision>
+      <origin xyz="0 0 ${base_collision_height}" rpy="0 0 0"/>  
+      <geometry>
+        <box size="${base_length} ${base_width} ${base_height}"/>
+      </geometry>
+    </collision>
+    <!--可视化部分-->
+    <visual>
+      <origin xyz="0 0 ${base_collision_height}" rpy="0 0 ${PI/2}"/>  
+      <geometry>
+        <mesh filename="package://car_model/meshes/vehicle_body.dae"/>
+        <!-- <box size="${base_length} ${base_width} ${base_height}"/> -->
+      </geometry>
+    </visual>
+  </link>
+  <!--节点，fixed是固定不动的节点-->
+  <joint name="inertial_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="main_mass"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>  
+  <!--链接质量的部分-->
+  <link name="main_mass" type="fixed">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <!--质量大小-->
+      <mass value="${base_mass}"/>
+      <!--转动惯量-->
+      <inertia
+        ixx="${base_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
+        iyy="${base_mass_iyy}"  iyz="0.000000"
+        izz="${base_mass_izz}"/>
+    </inertial>
+  </link>
+
+
+  <!--Rear Right Wheel-->
+  <!--右后轮，与主体链接的节点-->
+  <!--continuous 为没有限制的转动节点，这里管理轮子前后的运动-->
+  <joint name="rear_right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_right_wheel_link"/>
+    <!--初始位置-->
+    <origin xyz="${-rear_tyre_x} ${-rear_tyre_y} ${rear_tyre_r}" rpy="0 0 0"/>
+    <!--绕y轴正方向旋转-->
+    <axis xyz="0 1 0"/>
+    <!--节点动态属性，damping是指阻尼因此-->
+    <dynamics damping="0.1"/>
+    <!--力和速度限制-->
+    <limit effort="100000" velocity="10000" />
+    <!--这里和上面不是重复了 damping是阻尼 ,friction是摩擦因子-->
+    <joint_properties damping="0.0" friction="0.0" />
+  </joint>
+
+  <link name="rear_right_wheel_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+      <geometry>
+        <cylinder length="${rear_tyre_length}" radius="${rear_tyre_r}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 -${PI/2}"/>
+      <geometry>
+        <mesh filename="package://car_model/meshes/wheel.dae"/>
+        <!-- <cylinder length="${rear_tyre_length}" radius="${rear_tyre_r}"/> -->
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${rear_tyre_mass}"/>
+      <inertia
+        ixx="${rear_tyre_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
+        iyy="${rear_tyre_mass_iyy}"  iyz="0.000000"
+        izz="${rear_tyre_mass_izz}"/>
+    </inertial>
+  </link>
+
+  <!--Rear Left Wheel-->
+  <!--左后轮胎-->
+  <joint name="rear_left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="rear_left_wheel_link"/>
+    <origin xyz="${-rear_tyre_x} ${rear_tyre_y} ${rear_tyre_r}" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1"/>
+    <limit effort="100000" velocity="10000" />
+    <joint_properties damping="0.0" friction="0.0" />
+  </joint>
+
+  <link name="rear_left_wheel_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+      <geometry>
+        <cylinder length="${rear_tyre_length}" radius="${rear_tyre_r}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 ${PI/2}"/>
+      <geometry>
+        <mesh filename="package://car_model/meshes/wheel.dae"/>
+        <cylinder length="${rear_tyre_length}" radius="${rear_tyre_r}"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${rear_tyre_mass}"/>
+      <inertia
+        ixx="${rear_tyre_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
+        iyy="${rear_tyre_mass_iyy}"  iyz="0.000000"
+        izz="${rear_tyre_mass_izz}"/>
+    </inertial>
+  </link> 
+
+  <!--Front Right Steering-->
+  <!--这里的节点属性revolute,表示有限制的转动节点(0-90度)-->
+  <joint name="front_right_steering_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="front_right_steering_link"/>
+    <origin xyz="${front_tyre_x} ${-front_tyre_y} ${front_tyre_r}" rpy="0 0 0"/>
+    <!--z正方向为转轴-->
+    <axis xyz="0 0 1"/>
+    <!--转动上下限制，low->逆时针high-->
+    <limit lower="${-str_angle}" upper="${str_angle}" effort="1000000.0" velocity="10000.0"/>
+    <!--阻尼与摩擦系数-->
+    <!--摩擦系数：平移节点：N>>转动节点 Nm-->
+    <!--阻尼系数:平移：Ns/m>>转动节点：Nm.s/rad-->
+    <dynamics damping="10.0" friction="0.0"/>
+  </joint>
+
+  <link name="front_right_steering_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+      <geometry>
+        <cylinder length="${str_length}" radius="${str_radius}"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${str_mass}"/>
+      <inertia
+      ixx="${str_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
+      iyy="${str_mass_iyy}"  iyz="0.000000"
+      izz="${str_mass_izz}"/>
+    </inertial>
+  </link>
+
+
+  <!--Front Right Wheel-->
+  <joint name="front_right_wheel_joint" type="continuous">
+    <parent link="front_right_steering_link"/>
+    <child link="front_right_wheel_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1"/>
+    <limit effort="1000000" velocity="10000" />
+    <joint_properties damping="0.0" friction="0.0" />
+  </joint>
+
+  <link name="front_right_wheel_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+      <geometry>
+        <cylinder length="${front_tyre_length}" radius="${front_tyre_r}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 -${PI/2}"/>
+      <geometry>
+        <mesh filename="package://car_model/meshes/wheel.dae"/>
+        <cylinder length="${front_tyre_length}" radius="${front_tyre_r}"/>
+      </geometry>  
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${front_tyre_mass}"/>
+      <inertia
+        ixx="${front_tyre_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
+        iyy="${front_tyre_mass_iyy}"  iyz="0.000000"
+        izz="${front_tyre_mass_izz}"/>
+    </inertial>
+  </link>
+
+  <!--Front Left Steering-->
+  <joint name="front_left_steering_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="front_left_steering_link"/>
+    <origin xyz="${front_tyre_x} ${front_tyre_y} ${front_tyre_r}" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="${-str_angle}" upper="${str_angle}" effort="1000000.0" velocity="10000.0"/>
+    <dynamics damping="10.0" friction="0.0"/>
+  </joint>
+
+  <link name="front_left_steering_link">
+
+    <visual>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+      <geometry>
+        <cylinder length="${str_length}" radius="${str_radius}"/>
+      </geometry>
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${str_mass}"/>
+      <inertia
+      ixx="${str_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
+      iyy="${str_mass_iyy}"  iyz="0.000000"
+      izz="${str_mass_izz}"/>
+    </inertial>
+  </link>
+
+
+  <!--Front Left Wheel-->
+  <joint name="front_left_wheel_joint" type="continuous">
+    <parent link="front_left_steering_link"/>
+    <child link="front_left_wheel_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 1 0"/>
+    <dynamics damping="0.1"/>
+    <limit effort="1000000" velocity="10000" />
+    <joint_properties damping="0.0" friction="0.0" />
+  </joint>
+
+  <link name="front_left_wheel_link">
+    <collision>
+      <origin xyz="0 0 0" rpy="${PI/2} 0 0"/>
+      <geometry>
+        <cylinder length="${front_tyre_length}" radius="${front_tyre_r}"/>
+      </geometry>
+    </collision>
+
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 ${PI/2}"/>
+      <geometry>
+        <!--几何形状就是加载网格-->
+        <mesh filename="package://car_model/meshes/wheel.dae"/>
+        <!-- <cylinder length="${front_tyre_length}" radius="${front_tyre_r}"/> -->
+      </geometry>  
+    </visual>
+
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <mass value="${front_tyre_mass}"/>
+      <inertia
+        ixx="${front_tyre_mass_ixx}"  ixy="0.000000"  ixz="0.000000"
+        iyy="${front_tyre_mass_iyy}"  iyz="0.000000"
+        izz="${front_tyre_mass_izz}"/>
+    </inertial>
+  </link>  
+
+
+
+  <!-- motors and transmissions for the two rear wheels -->
+  <!-- 驱动后面两轮的执行器-->
+  <!--传输模块-->
+  <transmission name="tran1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <!---->
+    <joint name="rear_right_wheel_joint">
+      <!--在后面右轮的地方添加一个速度控制器，控制轮子的转速-->
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+      <!--增加一个执行单元-->
+      <!--执行单元的硬件接口和节点的一样-->
+      <!--VelocityJointInterface - 适用于速度控制的关节，如轮式机器人的驱动轮-->
+      <!--EffortJointInterface - 适用于扭矩控制的关节，如机械臂的关节-->
+      <!--PositionJointInterface - 适用于位置控制的关节-->
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <!--mechanicalReduction 表示的是差速比，
+          这里实际上是为了描述电机的减速器的减速比，
+          但就仿真而言我们并不需要与实际的电机减速比相同，
+          使用1作为减速比便于计算也不会影响后期的仿真使用。
+          同时从动关节并不需要添加transmission这个标签。-->
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>  
+
+  <!--同上-->
+  <transmission name="tran2">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="rear_left_wheel_joint">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+      <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>  
+
+  <!-- EPS and transmissions for the front steering -->
+  <transmission name="tran3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_right_steering_joint">
+      <!--前轮控制的扭矩-->
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="eps_right">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      <!--扭矩最大值？-->
+      <motorTorqueConstant>1000000</motorTorqueConstant>
+    </actuator>
+  </transmission>
+
+  <transmission name="tran4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="front_left_steering_joint">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="eps_left">
+      <hardwareInterface>hardware_interface/EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+      <motorTorqueConstant>1000000</motorTorqueConstant>
+    </actuator>
+  </transmission>
+
+
+
+  <!-- Friction Parametres -->
+
+  <gazebo reference="rear_right_wheel_link">
+    <!--滚动摩擦和滑动摩擦-->
+    <mu1>10000000</mu1>
+    <mu2>10000000</mu2>
+    <!--刚度,具体可以这样理解，轮胎不动时，人取推动需要的力量-->
+    <kp>10000000</kp>
+    <!--阻尼系数:表现为移动时的阻动力，有点表现为摩擦，其实完全不一样-->
+    <kd>1</kd>
+     <!--穿透深度？的最小值，我们仅仅获得穿透深度-minDepth的那部分力，不懂？反正这个值最大，质量或转动惯量的影响就越小-->
+    <!--<minDepth>1</minDepth>-->
+    <!--最大速度-->
+    <maxVel>100</maxVel>  
+  </gazebo>  
+
+  <gazebo reference="rear_left_wheel_link">
+    <mu1>10000000</mu1>
+    <mu2>10000000</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>       
+    <!--<minDepth>1</minDepth>-->
+    <!--最大速度-->
+    <maxVel>100</maxVel>  
+  </gazebo>   
+
+  <gazebo reference="front_right_wheel_link">
+    <mu1>10000000</mu1>
+    <mu2>10000000</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>         
+    <!--最大速度-->
+    <!--<minDepth>1</minDepth>-->
+    <maxVel>100</maxVel>  
+  </gazebo> 
+
+  <gazebo reference="front_left_wheel_link">
+    <mu1>10000000</mu1>
+    <mu2>10000000</mu2>
+    <kp>10000000</kp>
+    <kd>1</kd>         
+    <!--最大速度-->
+    <!--<minDepth>1</minDepth>-->
+    <maxVel>100</maxVel>  
+  </gazebo>    
+
+  <!-- Gazebo Plugins -->
+  <gazebo>
+    <!--加载插件-->
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <!--机器人名字空间，和launch中传入的要一致哦-->
+      <robotNamespace>/$(arg roboname)</robotNamespace>
+      <!--机器人描述参数-->
+      <robotParam>robot_description</robotParam>
+      <!--模拟器-->
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+    </plugin>
+  </gazebo>
+
+  <gazebo>
+    <!--信号发布器-->
+    <!-- 用于定是发布节点状态-->
+    <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+      <!--相关节点-->
+      <jointName>rear_left_wheel_joint, rear_right_wheel_joint, front_left_steering_joint, front_right_steering_joint, front_right_wheel_joint, front_left_wheel_joint</jointName>
+      <!--刷新率-->
+      <updateRate>50.0</updateRate>
+      <robotNamespace>/$(arg roboname)</robotNamespace>
+      <alwaysOn>true</alwaysOn>
+    </plugin>
+  </gazebo>
+
+</robot>

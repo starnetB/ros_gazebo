@@ -28,7 +28,7 @@ public:
         ekf_new_waypoint_loader(n,"/ekf_waypoint_loader/ekf_path");
         
 
-        ros::Rate loop_rate(1);
+        ros::Rate loop_rate(20);
         
         int count=0;
         while (ros::ok())
@@ -154,6 +154,7 @@ bool Ekf_WaypointLoader::ekf_loader_waypoint(std::string& ekf_file_path)
 
 
     std::string Line;
+    float ox=0,oy=0;
     while(getline(infile,Line))
     {
         std::istringstream row(Line);
@@ -183,6 +184,9 @@ bool Ekf_WaypointLoader::ekf_loader_waypoint(std::string& ekf_file_path)
         path_element.pose.position.y=p.pose.pose.position.y;
         //rviz
         base_path->poses.push_back(path_element);
+
+        ox=x;
+        oy=y;
     }
     infile.close();
 

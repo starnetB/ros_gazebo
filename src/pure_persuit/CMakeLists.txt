@@ -7,11 +7,14 @@ project(pure_persuit)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
+
 find_package(catkin REQUIRED COMPONENTS
   geometry_msgs
   roscpp
   rospy
+  sensor_msgs
   std_msgs
+  styx_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -121,6 +124,10 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
+find_package(Eigen3 REQUIRED)
+
+include_directories(${EIGEN3_INCLUDE_DIRS})
+
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/pure_persuit.cpp
@@ -205,3 +212,7 @@ include_directories(
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+
+add_executable(ekf_pure_persuit src/ekf_pure_persuit.cpp)
+target_link_libraries(ekf_pure_persuit ${catkin_LIBRARIES} ${PCL_LIBRARIES})
+add_dependencies(ekf_pure_persuit  styx_msgs_gencpp)

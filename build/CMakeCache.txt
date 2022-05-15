@@ -349,7 +349,10 @@ EIGEN_INCLUDE_DIR:PATH=/usr/include/eigen3
 EMPY_EXECUTABLE:FILEPATH=EMPY_EXECUTABLE-NOTFOUND
 
 //Empy script
-EMPY_SCRIPT:STRING=/usr/lib/python3/dist-packages/em.py
+EMPY_SCRIPT:STRING=/home/lees/anaconda3/lib/python3.9/site-packages/em.py
+
+//The directory containing a CMake configuration file for Eigen3.
+Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
 
 //Path to a file.
 FLANN_INCLUDE_DIR:PATH=/usr/include
@@ -395,7 +398,7 @@ LSB_FOUND:BOOL=TRUE
 LSB_RELEASE_EXECUTABLE:FILEPATH=/usr/bin/lsb_release
 
 //Path to a program.
-NOSETESTS:FILEPATH=/usr/bin/nosetests3
+NOSETESTS:FILEPATH=/home/lees/anaconda3/bin/nosetests-3.9
 
 //Path to a file.
 OPENNI2_INCLUDE_DIR:PATH=/usr/include/openni2
@@ -608,13 +611,13 @@ PCL_VISUALIZATION_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libpcl_visual
 PKG_CONFIG_EXECUTABLE:FILEPATH=/usr/bin/pkg-config
 
 //Path to a program.
-PYTHON_EXECUTABLE:FILEPATH=/usr/bin/python3
+PYTHON_EXECUTABLE:FILEPATH=/home/lees/anaconda3/bin/python3
 
 //Specify specific Python version to use ('major.minor' or 'major')
 PYTHON_VERSION:STRING=3
 
 //Location of Python module em
-PY_EM:STRING=/usr/lib/python3/dist-packages/em.py
+PY_EM:STRING=/home/lees/anaconda3/lib/python3.9/site-packages/em.py
 
 //Value Computed by CMake
 Project_BINARY_DIR:STATIC=/home/lees/catkin_ws/build
@@ -1110,9 +1113,9 @@ FIND_PACKAGE_MESSAGE_DETAILS_PCL_TRACKING:INTERNAL=[/usr/lib/x86_64-linux-gnu/li
 //Details about finding PCL_VISUALIZATION
 FIND_PACKAGE_MESSAGE_DETAILS_PCL_VISUALIZATION:INTERNAL=[/usr/lib/x86_64-linux-gnu/libpcl_visualization.so][/usr/include/pcl-1.10][v()]
 //Details about finding PY_em
-FIND_PACKAGE_MESSAGE_DETAILS_PY_em:INTERNAL=[/usr/lib/python3/dist-packages/em.py][v()]
+FIND_PACKAGE_MESSAGE_DETAILS_PY_em:INTERNAL=[/home/lees/anaconda3/lib/python3.9/site-packages/em.py][v()]
 //Details about finding PythonInterp
-FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/usr/bin/python3][v3.8.10()]
+FIND_PACKAGE_MESSAGE_DETAILS_PythonInterp:INTERNAL=[/home/lees/anaconda3/bin/python3][v3.9.7()]
 //Details about finding Qhull
 FIND_PACKAGE_MESSAGE_DETAILS_Qhull:INTERNAL=[optimized;/usr/lib/x86_64-linux-gnu/libqhull.so;debug;/usr/lib/x86_64-linux-gnu/libqhull.so][/usr/include][v()]
 //Details about finding Threads
